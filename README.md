@@ -19,3 +19,9 @@ JSX的onClick：控制在组件范围内，借用了事件委托；添加的所�
 事件--render--Virtual DOM -- DOM修改
 
 
+
+# feature/component
+1. 两种数据类型：prop（外）和state（内）
+2. style={{color: "red"}} 外层{}为JSX语法，内层{}代表为一个对象常量
+3. super(props)获取父组件的props，React.Component给this.props赋值
+4. constructor的this绑定：ES6并不自动绑定this到当前实力对象
