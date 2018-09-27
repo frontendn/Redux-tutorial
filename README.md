@@ -12,5 +12,10 @@
 HTML中的onclick：全局环境下执行，污染环境；影响页面性能；DOM元素删除后若忘记注销，容易内存泄漏
 JSX的onClick：控制在组件范围内，借用了事件委托；添加的所有onClick都会挂载在最顶部的DOM节点上，点击均被它捕获，然后根据具体组件分配特定函数；umount时可以轻易注销所有事件处理函数，防止内存泄漏
 
+##### jQuery （jQuery Directory）--选中DOM元素然后处理
+根据CSS规则找到id为clickCount的按钮，挂上匿名事件处理函数，在事件处理函数中，选中需要被修改的DOM元素，读取其中文本值，然后修改这个DOM元素
+##### React 关注于想要显示什么--UI=render(data) --响应式编程
+利用Virtual DOM，每次都只重新渲染最少的DOM，是对DOM树的抽象，只存在于Javascript空间的树形结构；对比每次Virtual DOM进行重新渲染
+事件--render--Virtual DOM -- DOM修改
 
 
