@@ -16,4 +16,3 @@ JSX的onClick：控制在组件范围内，借用了事件委托；添加的所�
 1. 在webpack的配置文件中，将所有的js和jsx交给babel处理，将ES6等语法转化为普通浏览器支持的语法；
 2. 关注于config和script的配置
 
-
