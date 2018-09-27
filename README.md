@@ -13,6 +13,7 @@ HTML中的onclick：全局环境下执行，污染环境；影响页面性能；
 JSX的onClick：控制在组件范围内，借用了事件委托；添加的所有onClick都会挂载在最顶部的DOM节点上，点击均被它捕获，然后根据具体组件分配特定函数；umount时可以轻易注销所有事件处理函数，防止内存泄漏
 
 # eject
-在webpack的配置文件中，将所有的js和jsx交给babel处理，将ES6等语法转化为普通浏览器支持的语法
+1. 在webpack的配置文件中，将所有的js和jsx交给babel处理，将ES6等语法转化为普通浏览器支持的语法；
+2. 关注于config和script的配置
 
 
