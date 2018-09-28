@@ -8,7 +8,7 @@ class Counter extends React.Component {
         this.onClickDecrementButton = this.onClickDecrementButton.bind(this)
 
         this.state = {
-            count: props.initValue || 0
+            count: [this.props.initValue] || 0
         }
     }
 
