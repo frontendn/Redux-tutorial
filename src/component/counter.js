@@ -1,15 +1,26 @@
 import React,{Component} from 'react'
+import PropTypes from 'prop-types'
 
 class Counter extends React.Component {
+
+    componentWillMount () {
+        console.log('enter componentWillMount' + this.props.caption)
+    }
+
     constructor(props) {
+        console.log('enter constructor' + props.caption)
         super(props); //initial Value from the father component
 
         this.onClickIncrementButton = this.onClickIncrementButton.bind(this)
         this.onClickDecrementButton = this.onClickDecrementButton.bind(this)
 
         this.state = {
-            count: [this.props.initValue] || 0
+            count: this.props.initValue
         }
+    }
+
+    componentDidMount () {
+        console.log('enter componentDidlMount' + this.props.caption)
     }
 
     onClickIncrementButton() {
@@ -39,6 +50,15 @@ class Counter extends React.Component {
             </div>
         )
     }
+}
+
+Counter.propTypes = {
+    caption: PropTypes.string.isRequired,
+    initValue: PropTypes.number
+}
+
+Counter.defaultProps = {
+    initValue: 0
 }
 
 export default Counter

@@ -2,6 +2,8 @@ import React,{Component} from 'react'
 import Counter from './counter'
 
 class ControlPanel extends React.Component {
+
+
     render () {
         return (
             <div>

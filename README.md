@@ -22,6 +22,29 @@ JSX的onClick：控制在组件范围内，借用了事件委托；添加的所�
 
 # feature/component
 1. 两种数据类型：prop（外）和state（内）
-2. style={{color: "red"}} 外层{}为JSX语法，内层{}代表为一个对象常量
+2. style={{color: "red"}} 外层{}为JSX语法，内层{}代表为一个对象常量;props类型不限于字符串，JSX中必须用{}
 3. super(props)获取父组件的props，React.Component给this.props赋值
-4. constructor的this绑定：ES6并不自动绑定this到当前实力对象
+4. constructor的this绑定：ES6并不自动绑定this到当前实例对象
+5. 解构赋值：const {caption} = this.props
+6. PropTypes: 开发环境
+7. state必须是一个Js对象
+8. 组件的生命周期：装载-更新-卸载
+##### 装载过程：constructor-getIntialState-getDefaultProp-componentWillMount-render-componentDidMount
+getIntialState、detDefaultProp会在React.createClass中调用；ES6中constructor给类属性defaultProps赋值初始值，效果一样
+##### 渲染：render-纯函数：componentWillMount（都可以提前到constructor）-render-componentDidMount
+```
+render函数被调用完之后，componentDidMount函数并不会立即调用，componentDidMount函数调用时，render已经引发了渲染，组件已经装载到DOM树上
+只在浏览器执行，可只关注于浏览器端的逻辑
+```
+
+####### componentWillMount与componentDidMount区别
+1. Did：只在浏览器执行
+2. Will：在服务器端和浏览器端调用
+3. 装载是一个创建组件并装载到DOM树上的过程，真正的装载不能在服务器端完成
+
+##### 更新过程
+1. componentWillReceiveProps
+2. shouldComponentUpdate
+3. componentWillUpdate
+4. render
+5. componentDidUpdate
