@@ -44,7 +44,14 @@ render函数被调用完之后，componentDidMount函数并不会立即调用，
 
 ##### 更新过程
 1. componentWillReceiveProps
-2. shouldComponentUpdate
+只要父函数的render被调用，在render函数里被渲染的子组件就会经历更新过程，不管父组件传给子组件的props有没有改变都会触发
+```angular2html
+this.setState不会出发这个函数,因为函数根据新的props计算是否更新内部状态status，更新内部状态使用setState，所以会导致死循环
+```
+2. shouldComponentUpdate(nextProps,nextState)
+决定了一个组件什么时候不需要渲染，要求有返回结果，返回布尔值，告诉React这个组件在这次更新中是否需要继续
 3. componentWillUpdate
 4. render
 5. componentDidUpdate
+##### 卸载过程componentWillUnmount
+在componentDidMount中非React方法创建的DOM需要在componentWillUnmount中卸载删除

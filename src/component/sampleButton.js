@@ -13,7 +13,7 @@ class SampleButton extends React.Component {
 
     render () {
         return (
-            <div id={"sample"} onClick={this.onButtonClick} style={{color: "red",borderWidth: 2}}>
+            <div id={"sample"} onClick={() => this.onButtonClick()} style={{color: "red",borderWidth: 2}}>
                 Click me to re-render!
             </div>
         )
