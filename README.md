@@ -37,7 +37,7 @@ render函数被调用完之后，componentDidMount函数并不会立即调用，
 只在浏览器执行，可只关注于浏览器端的逻辑
 ```
 
-####### componentWillMount与componentDidMount区别
+##### componentWillMount与componentDidMount区别
 1. Did：只在浏览器执行
 2. Will：在服务器端和浏览器端调用
 3. 装载是一个创建组件并装载到DOM树上的过程，真正的装载不能在服务器端完成
