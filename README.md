@@ -18,4 +18,8 @@ JSX的onClick：控制在组件范围内，借用了事件委托；添加的所�
 利用Virtual DOM，每次都只重新渲染最少的DOM，是对DOM树的抽象，只存在于Javascript空间的树形结构；对比每次Virtual DOM进行重新渲染
 事件--render--Virtual DOM -- DOM修改
 
+# feature/redux
+Redux: 唯一数据源(Store)，保持状态只读，数据改变根据纯函数完成(reducer规约所有元素的功能，reducer(state,action),reducer负责计算状态并不存储状态)
+```angular2html
 
+```
